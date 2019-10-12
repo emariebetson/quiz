@@ -40,6 +40,11 @@ var questions = [{
     correctAnswer: 0
 }];
 
+if (confirm('Are you ready, Muggle?')) {
+    alert('Grab your broomstick!');
+} else {
+    alert('Why did you press cancel? You should have confirmed');
+}
 
 var currentQuestion = 0;
 var viewingAns = 0;
