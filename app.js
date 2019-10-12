@@ -1,41 +1,41 @@
 var questions = [{
     question: "1) According to the Dursleys, how did Harry’s parents die?",
-    choices: ["msg('Plane Crash')", "msgBox('Train Accident');", "alertBox('Bus Crash');", "alert('Car Accident');"],
+    choices: ["Plane Crash", "Train Accident", "Bus Crash", "Car Accident"],
     correctAnswer: 3
 }, {
-    question: "2. What’s the LAST line of the book, Harry Potter and the Sorcerer’s Stone?",
-    choices: ["msg('Goodbye, for now, Hogwarts.')", "msgBox('Harry, Ron, and Hermione looked at each other sheepishly and smiled.');", "alertBox('I'm going to have a lot of fun with Dudley this summer...');", "alertBox('said Dumbledore with a nod.');"],
+    question: "2) What’s the LAST line of the book, Harry Potter and the Sorcerer’s Stone?",
+    choices: ["Goodbye, for now, Hogwarts.", "Harry, Ron, and Hermione looked at each other sheepishly and smiled.", "I'm going to have a lot of fun with Dudley this summer...", "Dumbledore nodded with a smile."],
     correctAnswer: 2
 }, {
-    question: "3. What is Dumbledore’s full name?",
-    choices: ["msg('Albus Wulfric Percival Brian Dumbledore')", "msgBox('Albus Percival Wulfric Brian Dumbledore');", "alertBox('Albus Percival Brian Wulfric Dumbledore');", "alertBox('Albus Brian Percival Wulfric Dumbledore');"],
+    question: "3) What is Dumbledore’s full name?",
+    choices: ["Albus Wulfric Percival Brian Dumbledore", "Albus Percival Wulfric Brian Dumbledore", "Albus Percival Brian Wulfric Dumbledore", "Albus Brian Percival Wulfric Dumbledore"],
     correctAnswer: 1
 }, {
-    question: "1. What is Lord Voldemort’s real name?",
-    choices: ["msg('Tom Marvolo Riddle')", "msgBox('Tom Marvilo Riddle');", "alertBox('Tom Marvin Riddle');", "alert('Tom Ravalo Riddle');"],
+    question: "4) What is Lord Voldemort’s real name?",
+    choices: ["Tom Marvolo Riddle", "Tom Marvilo Riddle", "Tom Marvin Riddle", "Tom Ravalo Riddle"],
     correctAnswer: 0
 }, {
-    question: "5. What does S.P.E.W. stand for?",
-    choices: ["msg('Society For the Promotion of Elfish Welfare')", "msgBox('Society For the Protection of Elves and Wizards');", "alertBox('Support For People, Elves, and Wizards');", "alert('Sorority For the Protection of Elves and Wands');"],
+    question: "5) What does S.P.E.W. stand for?",
+    choices: ["Society For the Promotion of Elfish Welfare", "Society For the Protection of Elves and Wizards", "Support For People, Elves, and Wizards", "Sorority For the Protection of Elves and Wands"],
     correctAnswer: 0
 },{
-	question: "6. Who gave us the Marauder’s Map?",
+	question: "6) Who gave us the Marauder’s Map?",
     choices: ["Messrs Moody, Wormtongue, Sappen, and Frongs", "Messrs Moony, Wormtail, Padfoot, and Prongs", "Messrs Molly, Wilfred, Peter, and Phongs", "Messrs Matchstick, Winston, Footfed, and Trongs"],
     correctAnswer: 1
 },{
-	question: "7. A person born into a wizarding family who cannot do magic is called…",
+	question: "7) A person born into a wizarding family who cannot do magic is called…",
     choices: ["A Muggle", "A Half-Blood", "A Mudblood", "A Squib"],
     correctAnswer: 3
 },{
-	question: "8. What is the symbol for the Ravenclaw house?",
+	question: "8) What is the symbol for the Ravenclaw house?",
     choices: ["Raven", "Crow", "Eagle", "Hawk"],
     correctAnswer: 2
 },{
-	question: "9. How many Sickles are in a Galleon?",
+	question: "9) How many Sickles are in a Galleon?",
     choices: ["13", "17", "15", "19"],
     correctAnswer: 1
 },{
-	question: "10. What are the three cores Garrick Ollivander uses in his wand-making?",
+	question: "10) What are the three cores Garrick Ollivander uses in his wand-making?",
     choices: ["Phoenix feathers, dragon heartstring, and unicorn hair", "Phoenix feathers, dragon tooth, and centaur mane", "Dragon heartstring, unicorn horn, and centaur mane", "Phoenix beak, dragon heartstring, unicorn hair"],
     correctAnswer: 0
 }];
@@ -118,7 +118,7 @@ $(document).ready(function ()
 				{
 					displayScore();
 					$('#iTimeShow').html('Quiz Time Completed!');
-					$('#timer').html("You scored: " + correctAnswers + " out of: " + questions.length);
+					$('#timer').html("You scored " + correctAnswers + " out of " + questions.length);
 					c=185;
 					$(document).find(".preButton").text("View Answer");
 					$(document).find(".nextButton").text("Play Again?");
@@ -162,7 +162,7 @@ function timedCount()
 		{
 					displayScore();
 					$('#iTimeShow').html('Quiz Time Completed!');
-					$('#timer').html("You scored: " + correctAnswers + " out of: " + questions.length);
+					$('#timer').html("You scored" + correctAnswers + "out of" + questions.length);
 					c=185;
 					$(document).find(".preButton").text("View Answer");
 					$(document).find(".nextButton").text("Play Again?");
@@ -171,41 +171,6 @@ function timedCount()
 					
 		}
 		
-		/*if(c == 0 )
-		{	
-			if (!quizOver) 
-			{
-				var val = $("input[type='radio']:checked").val();
-            	if (val == questions[currentQuestion].correctAnswer) 
-				{
-					correctAnswers++;
-				}
-				currentQuestion++; // Since we have already displayed the first question on DOM ready
-				
-				if (currentQuestion < questions.length) 
-				{
-					displayCurrentQuestion();
-					c=15;
-				} 
-				else 
-				{
-					displayScore();
-					$('#timer').html('');
-					c=16;
-					$(document).find(".nextButton").text("Play Again?");
-					quizOver = true;
-					return false;
-				}
-			}
-			else 
-			{ // quiz is over and clicked the next button (which now displays 'Play Again?'
-				quizOver = false;
-				$(document).find(".nextButton").text("Next Question");
-				resetQuiz();
-				displayCurrentQuestion();
-				hideScore();
-			}		
-		}	*/
 		c = c - 1;
 		t = setTimeout(function()
 		{
@@ -252,7 +217,7 @@ function resetQuiz()
 
 function displayScore()
 {
-    $(document).find(".quizContainer > .result").text("You scored: " + correctAnswers + " out of: " + questions.length);
+    $(document).find(".quizContainer > .result").text("You scored " + correctAnswers + " out of " + questions.length);
     $(document).find(".quizContainer > .result").show();
 }
 
