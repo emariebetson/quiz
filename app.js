@@ -283,7 +283,8 @@ function viewResults()
     }
 
     function onSubmit() {
-  localStorage.setItem("name", document.getElementById("name").value);
+  localStorage.setItem("w3input", document.getElementById("name").value);
+console.log(localStorage.getItem("name"));
 }
 	
 	currentQuestion++;
