@@ -10,8 +10,19 @@
         <div id="quiz1" class="text-center">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Harry_Potter_wordmark.svg/2180px-Harry_Potter_wordmark.svg.png" width=50%;>
                 <h3>Test your skills, Muggle!</h3>
-			<img class="img-responsive;center" height="180" width="180" src="./harrypotter.jpg">
-			<h4 style="color:#FF0000;position:flex;left:65%;top:65%;"><span id="iTimeShow">Time Remaining: </span><br/><span id='timer' style="font-size:25px;"></span></h4>
+            <img class="img-responsive;center" height="180" width="180" src="./harrypotter.jpg">
+            <div id="musicControls" class="text-center">
+                    <button class="btn btn-warning btn-xs theme-button">
+                      <span class="fa fa-music"></span> Play Theme!</button>
+                    <button class="btn btn-dark btn-xs pause-button">
+                      <span class="fa fa-pause"></span> Pause Song</button>
+                  </div>
+            <h4 style="color:#FF0000;position:flex;left:65%;top:65%;"><span id="iTimeShow">Time Remaining: </span><br/><span id='timer' style="font-size:25px;"></span></h4>
+            <h5>Save your most impressive score!</h5>
+            <form class="w3-container" id="form"> 
+                    <p><label>Initials </label><input class="w3input" type="text" id="name"></p>
+                    <button class="w3-button w3-blue">Submit</button>
+                    </form>
 		</div>
 		
         <div class="question"></div>
@@ -21,6 +32,7 @@
 		<button class="preButton">Previous Question</button>
         <button class="nextButton">Next Question</button>
     </div>
+    
 </body>
 <script src="./app.js"></script>
   </html>

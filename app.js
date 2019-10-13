@@ -43,7 +43,7 @@ var questions = [{
 if (confirm('Are you ready, Muggle?')) {
     alert('Grab your broomstick!');
 } else {
-    alert('Why did you press cancel? You should have confirmed');
+    alert('Are you daft??? Get on with it!');
 }
 
 var currentQuestion = 0;
@@ -55,7 +55,19 @@ var iSelectedAnswer = [];
 	var t;
 $(document).ready(function () 
 {
-    // Display the first question
+    // Gets Link for Theme Song
+    var audioElement = document.createElement("audio");
+    audioElement.setAttribute("src", "harrypotter.mp3");
+
+    // Theme Button
+    $(".theme-button").on("click", function() {
+      audioElement.play();
+    });
+    $(".pause-button").on("click", function() {
+      audioElement.pause();
+    });
+
+    // display the first question
     displayCurrentQuestion();
     $(this).find(".quizMessage").hide();
     $(this).find(".preButton").attr('disabled', 'disabled');
@@ -73,7 +85,7 @@ $(document).ready(function ()
 			  $(".preButton").attr('disabled', 'disabled');
 			}
 			
-				currentQuestion--; // Since we have already displayed the first question on DOM ready
+				currentQuestion--; // since we have already displayed the first question on DOM ready
 				if (currentQuestion < questions.length) 
 				{
 					displayCurrentQuestion();
@@ -87,7 +99,7 @@ $(document).ready(function ()
     });
 
 	
-	// On clicking next, display the next question
+	// on clicking next, display the next question
     $(this).find(".nextButton").on("click", function () 
 	{
         if (!quizOver) 
@@ -143,7 +155,8 @@ $(document).ready(function ()
 			resetQuiz();
 			viewingAns = 1;
 			displayCurrentQuestion();
-			hideScore();
+            hideScore();
+            
 		}
     });
 });
@@ -231,7 +244,7 @@ function hideScore()
     $(document).find(".result").hide();
 }
 
-// This displays the current question AND the choices
+// displays the current question AND the choices
 function viewResults() 
 {
 
@@ -243,9 +256,9 @@ function viewResults()
     var questionClass = $(document).find(".quizContainer > .question");
     var choiceList = $(document).find(".quizContainer > .choiceList");
     var numChoices = questions[currentQuestion].choices.length;
-    // Set the questionClass text to the current question
+    // set the questionClass text to the current question
     $(questionClass).text(question);
-    // Remove all current <li> elements (if any)
+    // remove all current <li> elements (if any)
     $(choiceList).find("li").remove();
     var choice;
 	
@@ -268,6 +281,10 @@ function viewResults()
 			}
 		}
     }
+
+    function onSubmit() {
+  localStorage.setItem("name", document.getElementById("name").value);
+}
 	
 	currentQuestion++;
 	
